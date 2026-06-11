@@ -1,9 +1,9 @@
 class Aspire < Formula
   desc "CLI for building observable, production-ready distributed applications"
   homepage "https://aspire.dev/"
-  url "https://github.com/radical/aspire/archive/3be8b8767be8aab2fa74f776fdab2220b6ea79be.tar.gz"
-  version "0.0.0-3be8b87"
-  sha256 "47c4a90e767f067347153e4c6f7e990b9fce43c51a74bace9b6e5849cb1008af"
+  url "https://github.com/radical/aspire/archive/781e59b58089b967be8a3529c6e191b5dcff5c14.tar.gz"
+  version "13.5.0-ci"
+  sha256 "1df726e8e4dbbb86adaf72b6ad5fca223c0e298bb1a107984257d32d6f72317e"
   license "MIT"
   head "https://github.com/microsoft/aspire.git", branch: "main"
 
@@ -86,6 +86,8 @@ class Aspire < Formula
            "--dotnet-root", buildpath/"dotnet-sdk",
            "--libexec", libexec,
            "--bin", bin,
+           # Only the versions/<v> layout dir name. The binary's version is the
+           # Arcade-computed value; `version` equals it (resolved at render time).
            "--version", version.to_s
   end
 
